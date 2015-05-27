@@ -35,11 +35,9 @@
 	 } 
 	 if (resolution == uint8_t(TSL45315_TIME_M2)) {
 		 _timerfactor = 2;
-		 Serial.println("M2");
 	 } 
 	 if (resolution == uint8_t(TSL45315_TIME_M4)) {
 		 _timerfactor = 4;
-		 Serial.println("M4");
 	 } 
  }
   
@@ -49,8 +47,6 @@
  /*========================================================================*/
  boolean Makerblog_TSL45315::begin(void)
  {
-	 Serial.print("StartBegin, TF:");
-	 Serial.println(_timerfactor);
 	 Wire.begin();
 	 Wire.beginTransmission(TSL45315_I2C_ADDR);
      Wire.write(0x80|TSL45315_REG_ID);
@@ -61,11 +57,7 @@
      {
 		 unsigned char c = Wire.read();
 		 c = c & 0xF0;
-		 if (c == 0xA0) {
-			 Serial.println("OK");
-		 } else
-		 {
-			 Serial.println("NOT OK");
+		 if (c != 0xA0) {
 			 return false;
 		 }
      }
