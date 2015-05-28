@@ -34,6 +34,7 @@ public:
 	Makerblog_TSL45315(uint8_t resolution);
 	boolean begin(void);
 	uint32_t readLux(void);
+	boolean powerDown(void);
 	
 	
 private:

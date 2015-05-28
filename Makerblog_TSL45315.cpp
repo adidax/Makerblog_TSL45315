@@ -95,3 +95,13 @@
 	 return lux;
  }
  
+ 
+boolean Makerblog_TSL45315::powerDown(void)
+{
+    Wire.beginTransmission(TSL45315_I2C_ADDR);
+    Wire.write(0x80|TSL45315_REG_CONTROL);
+    Wire.write(0x00);
+    Wire.endTransmission();
+	return true;
+}
+ 
