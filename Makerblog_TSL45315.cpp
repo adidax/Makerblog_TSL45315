@@ -1,19 +1,12 @@
 /*************************************************** 
   This is a library for the TSL45315 Lux sensor breakout board by Watterott
-  These sensor use I2C to communicate, 2 pins are required to  
-  interface
+  These sensors use I2C to communicate, 2 pins are required to interface
 
   Written by Adi Dax/Makerblog.at  
   BSD license, all text above must be included in any redistribution
- #include <avr/pgmspace.h>
- #include <util/delay.h>
- #include <stdlib.h>
- #include <math.h>
-
  ****************************************************/
 
  #include <Arduino.h>
- #include <Wire.h>
 
  #include "Makerblog_TSL45315.h"
  
