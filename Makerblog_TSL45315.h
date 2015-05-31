@@ -15,6 +15,8 @@
 #else
  #include <WProgram.h>
 #endif 
+
+#include <Wire.h>
  
 #define TSL45315_I2C_ADDR 		(0x29)
 
